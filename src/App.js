@@ -1,17 +1,8 @@
 import logo from './logo.svg'
-import Card from './Components/Card'
-import Form from './Components/OnChange'
-import './App.scss'
+//import './App.scss'
+import Home from './Views'
 
 
-function Header (){
-  return(
-    <header>This is a header
-      <h3>Links</h3>
-    </header>
-    
-  )
-}
 // 2a. Que tenga un logo al lado izquierdo con el nombre "Kodemia" a su derecha, y al lado derecho que sea una lista de links: "Home, About, Projects", y tu Nombre
 
 function Footer(){
@@ -24,7 +15,6 @@ function Layout (props){
 
   return(
     <div id="layout">
-      <Header name={props.name}/>
       {props.children}
       <Footer/>
     </div>
@@ -41,18 +31,7 @@ function App() {
   
   return (
     <div className="App-header">
-        <Card price='$ 100' name='Audifonos' img=' http ruta' description='This is a description'/>
-        <Card price='$ 200' name='Baterias' />
-        <Card price='$ 500' name='USB Cable'/>
-
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+        <Home/>
     </div>
   );
 }
