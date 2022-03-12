@@ -1,9 +1,15 @@
 import React from "react"
-import './Card.scss'
-import Card from 'react-bootstrap/Card'
+import {Card, Button} from 'react-bootstrap/Card'
 import Button from 'react-bootstrap/Button'
+import './Card.scss'
+import Badge from 'react-bootstrap/Badge'
 
 function MyCard(props){
+  const [itemCount, setItemCount] = React.useState(0) // Var y function Hook
+  function addToCart(){
+    console.log('Listening click')
+    setItemCount(itemCount + 1)
+  }
 	console.log(props)
     return (
 		<Card style={{ width: '18rem' }}>
@@ -16,7 +22,8 @@ function MyCard(props){
 	<Card.Text >
 		{props.price}
 	</Card.Text>
-    <Button variant="primary">Buy Now</Button>
+    <Button onClick={addToCart} variant="primary">Add to Cart</Button>
+    <div > Carrito: {itemCount} </div>
   </Card.Body>
 </Card>
 	)
